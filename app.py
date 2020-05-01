@@ -15,10 +15,9 @@ financialreportingdf =0
 discountrate=0.2
 margin = 0.15
 
-
 # Set up the app
+
 app = dash.Dash(__name__)
-server = app.server
 
 app.layout = html.Div([
     html.Div([
@@ -120,6 +119,5 @@ def generate_future_price_table(selected_dropdown_value,discountrate,marginrate,
     ]) for i in range(min(len(pricedf), max_rows))]
     
 
-
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.server(debug=True)
